@@ -16,18 +16,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
+      - name: Debug - Show files
+        run: |
+          echo "=== Archivos en el repositorio ==="
+          ls -la
+          echo "=== ¿Existe index.html? ==="
+          if [ -f "index.html" ]; then
+            echo "✅ index.html existe"
+          else
+            echo "❌ index.html no existe"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
-      - name: Upload HTML files
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Si tus archivos HTML están en la raíz:
+          # Asegúrate de que el path es la raíz, donde está index.html
           path: ./
-          
-          # Si tus archivos están en una carpeta como 'public' o 'docs':
-          # path: ./public
 
   deploy:
     environment:
