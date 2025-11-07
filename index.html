@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación Especial - 14 Diciembre 2025</title>
+    <meta name="description" content="Te invitamos a nuestra celebración especial el 14 de Diciembre 2025">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f4f0;
+            color: #333;
+            line-height: 1.6;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .invitacion {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .imagen-container {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5; /* Fondo por si no carga la imagen */
+        }
+        
+        .imagen-invitacion {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .contenido-invitacion {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .contenido-invitacion h1 {
+            color: #84a59d;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .contenido-invitacion p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .btn-detalles {
+            display: inline-block;
+            background-color: #f28482;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .btn-detalles:hover {
+            background-color: #e56b6f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detalles {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-top: 20px;
+        }
+        
+        .detalles h2 {
+            color: #84a59d;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        .info-detalles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .item-detalle {
+            flex: 1 1 100%;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f9f4f0;
+        }
+        
+        .item-detalle h3 {
+            color: #f28482;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .item-detalle p {
+            font-size: 15px;
+        }
+        
+        .link-maps {
+            color: #84a59d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .link-maps:hover {
+            text-decoration: underline;
+        }
+
+        .confirmacion-botones {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn-confirmar {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-declinar {
+            display: inline-block;
+            background-color: #f28482;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-confirmar:hover, .btn-declinar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Estilos para tablets */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+            }
+            
+            .item-detalle {
+                flex: 1 1 calc(50% - 15px);
+            }
+            
+            .contenido-invitacion h1 {
+                font-size: 28px;
+            }
+            
+            .confirmacion-botones {
+                gap: 15px;
+            }
+            
+            .btn-confirmar, .btn-declinar {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+        }
+
+        /* Estilos para desktop */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 500px;
+            }
+            
+            .contenido-invitacion h1 {
+                font-size: 30px;
+            }
+        }
+        
+        .mensaje-importante {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="invitacion">
+            <div class="imagen-container">
+                <!-- IMPORTANTE: Cambia "invitacion.jpg" por el nombre EXACTO de tu imagen -->
+                <img src="invitacion.jpg" alt="Invitación Especial - 14 Diciembre 2025" class="imagen-invitacion">
+            </div>
+            <div class="contenido-invitacion">
+                <h1>¡Te invitamos a celebrar con noso!</h1>
+                <p>Nos encantaría que nos acompañes en este día especial</p>
+                <p><strong>Fecha:</strong> 14 de Diciembre, 2025</p>
+                <p><strong>Hora:</strong> 17:00 horas</p>
+                
+                <div class="confirmacion-botones">
+                    <a href="https://wa.me/595991618730?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20evento%20del%2014%20de%20Diciembre%202025.%20¡Nos%20vemos!" 
+                       class="btn-confirmar" target="_blank">
+                       ✅ Confirmar Asistencia
+                    </a>
+                    <a href="https://wa.me/595991618730?text=Hola,%20lamentablemente%20no%20podré%20asistir%20a%20tu%20evento%20del%2014%20de%20Diciembre%202025.%20¡Muchos%20éxitos!" 
+                       class="btn-declinar" target="_blank">
+                       ❌ No Podré Asistir
+                    </a>
+                </div>
+                
+                <a href="#detalles" class="btn-detalles">Ver todos los detalles</a>
+                
+                <a href="https://wa.me/?text=Te%20invito%20a%20mi%20celebración%20el%2014%20de%20Diciembre%202025.%20Mira%20la%20invitación%20aquí:" 
+                   class="whatsapp-btn" target="_blank">
+                   📱 Compartir Invitación
+                </a>
+            </div>
+        </div>
+        
+        <div id="detalles" class="detalles">
+            <h2>Detalles del Evento</h2>
+            <div class="info-detalles">
+                <div class="item-detalle">
+                    <h3>Ubicación</h3>
+                    <p>
+                        <a href="https://maps.app.goo.gl/XJ4WrNKVupWmzai58" class="link-maps" target="_blank">Ver en Google Maps</a><br>
+                        Mi domicilio<br>
+                        Av. El Palmar #, Ciudad de Luque
+                    </p>
+                </div>
+                <div class="item-detalle">
+                    <h3>Tipo de Vestimenta</h3>
+                    <p>Casual<br>
+                    Colores sugeridos: ninguno</p>
+                </div>
+                <div class="item-detalle">
+                    <h3>Confirmación</h3>
+                    <p>Por favor confirma tu asistencia antes del 1 de Diciembre<br>
+                    Tel: 0991618730</p>
+                </div>
+                <div class="item-detalle">
+                    <h3>Regalos</h3>
+                    <p>Tu presencia es nuestro mejor regalo. Si deseas hacernos un obsequio, será bienvenido.</p>
+                </div>
+            </div>
+            
+            <div class="confirmacion-botones">
+                <a href="https://wa.me/595991618730?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20evento%20del%2014%20de%20Diciembre%202025.%20¡Nos%20vemos!" 
+                   class="btn-confirmar" target="_blank">
+                   ✅ Confirmar Asistencia
+                </a>
+                <a href="https://wa.me/595991618730?text=Hola,%20lamentablemente%20no%20podré%20asistir%20a%20tu%20evento%20del%2014%20de%20Diciembre%202025.%20¡Muchos%20éxitos!" 
+                   class="btn-declinar" target="_blank">
+                   ❌ No Podré Asistir
+                </a>
+            </div>
+        </div>
+        
+        <div class="mensaje-importante">
+            <strong>¿No ves la imagen?</strong><br>
+            Asegúrate de que el archivo de imagen esté en la misma carpeta que este archivo HTML y se llame EXACTAMENTE "invitacion.jpg"
+        </div>
+    </div>
+</body>
+</html>
