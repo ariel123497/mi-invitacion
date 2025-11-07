@@ -17,17 +17,42 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
+      - name: Debug - List all files
+        run: |
+          echo "=== ESTRUCTURA DEL REPOSITORIO ==="
+          find . -type f -name "*.html" -o -name "*.jpg" -o -name "*.yml" | sort
+          echo "=== ARCHIVOS EN RAÍZ ==="
+          ls -la
+          echo "=== ¿EXISTE index.html? ==="
+          ls -la index.html 2>/dev/null && echo "index.html EXISTE" || echo "index.html NO existe"
+          echo "=== ¿EXISTE invitacion.html? ==="
+          ls -la invitacion.html 2>/dev/null && echo "invitacion.html EXISTE" || echo "invitacion.html NO existe"
+          
+      - name: Create index.html from invitacion.html
+        run: |
+          if [ -f invitacion.html ]; then
+            echo "Copiando invitacion.html a index.html..."
+            cp invitacion.html index.html
+            echo "index.html creado exitosamente."
+          else
+            echo "ERROR: invitacion.html no encontrado. No se puede crear index.html."
+            exit 1
+          fi
+          
+      - name: Verify index.html was created
+        run: |
+          echo "=== Verificando que index.html existe ==="
+          ls -la index.html
+          echo "=== Contenido de index.html (primeras 10 líneas) ==="
+          head -10 index.html
+          
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Upload HTML files
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Si tus archivos HTML están en la raíz:
           path: ./
-          
-          # Si tus archivos están en una carpeta como 'public' o 'docs':
-          # path: ./public
 
   deploy:
     environment:
